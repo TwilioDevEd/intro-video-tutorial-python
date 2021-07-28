@@ -59,20 +59,22 @@ Before we begin, we need to collect all the config values we need to run the app
    make serve
    ```
 
-5. Navigate to [http://localhost:5000](http://localhost:5000). Enter the name of a video room you'd like to join and click "Join Room". You might be prompted to grant access to your camera and microphone.
+5. Navigate to [http://localhost:5000](http://localhost:5000).
+   Enter the name of a video room you'd like to join and click "Join Room". You might be prompted to grant access to your camera and microphone.
 
-You can open a new browser tab, navigate to [http://localhost:5000](http://localhost:5000) again, and join the same room from the new tab. Now, you should see two videos in each window, one for each browser tab.
+   You can open a new browser tab, navigate to [http://localhost:5000](http://localhost:5000) again, and join the same
+   room from the new tab. Now, you should see two videos in each window, one for each browser tab.
 
 6. **Optional**: Install ngrok
 
-Expose your application to the wider internet using [ngrok](https://ngrok.com/download). This step will allow others to join the application that's running on your local computer.
+   Expose your application to the wider internet using [ngrok](https://ngrok.com/download). This step will allow others to join
+   the application that's running on your local computer.
 
-First, [download and install ngrok](https://ngrok.com/download). Then, run it with the following command:
+   First, [download and install ngrok](https://ngrok.com/download). Then, run it with the following command:
 
    ```bash
    ngrok http 5000
    ```
 
-When ngrok starts up, it will assign a unique URL to your tunnel and label it as the "Forwarding" URL. You can send this URL to others so that they can test your application too.
-
-## Ideas for further 
+   When ngrok starts up, it will assign a unique URL to your tunnel and label it as the "Forwarding" URL. You can send this URL to others so
+   that they can test your application too.
