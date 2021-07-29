@@ -28,9 +28,9 @@ const startRoom = async (event) => {
   room.participants.forEach(handleConnectedParticipant);
   room.on("participantConnected", handleConnectedParticipant);
 
-      // handle cleanup when a participant disconnects
+  // handle cleanup when a participant disconnects
   room.on("participantDisconnected", handleDisconnectedParticipant);
-  window.addEventListener('pagehide', () => room.disconnect());
+  window.addEventListener("pagehide", () => room.disconnect());
   window.addEventListener("beforeunload", () => room.disconnect());
 };
 
@@ -58,7 +58,7 @@ const handleTrackPublication = (trackPublication, participant) => {
     // (depending on the type of track) and adds the video or audio stream
     participantDiv.append(track.attach());
   }
-     // check if the trackPublication contains a `track` attribute. If it does,
+  // check if the trackPublication contains a `track` attribute. If it does,
   // we are subscribed to this track. If not, we are not subscribed.
   if (trackPublication.track) {
     displayTrack(trackPublication.track);

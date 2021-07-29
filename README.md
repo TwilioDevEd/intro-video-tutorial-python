@@ -16,19 +16,19 @@ set up this application locally and start using it right away.
 ## Set Up
 
 ### Requirements
-* [Python 3](https://wiki.python.org/moin/BeginnersGuide/Download) (version 3.6 or above)
-* [pip](https://pip.pypa.io/en/stable/installation/) for installing dependencies
-* A free Twilio account. Sign up for a [free account](https://www.twilio.com/try-twilio) or log into an [existing account](https://www.twilio.com/console).
 
+- [Python 3](https://wiki.python.org/moin/BeginnersGuide/Download) (version 3.6 or above)
+- [pip](https://pip.pypa.io/en/stable/installation/) for installing dependencies
+- A free Twilio account. Sign up for a [free account](https://www.twilio.com/try-twilio) or log into an [existing account](https://www.twilio.com/console).
 
 ### Twilio Account Settings
 
 Before we begin, we need to collect all the config values we need to run the application.
 
-| Config Value  | Description |
-| :-------------  |:------------- |
-`TWILIO_ACCOUNT_SID` | Your primary Twilio account identifier - find this [in the console here](https://www.twilio.com/console).
-`TWILIO_API_KEY_SID` / `TWILIO_API_KEY_SECRET` | Your REST API Key information needed to create an [Access Token](https://www.twilio.com/docs/iam/access-tokens) - create [an API key here](https://www.twilio.com/console/project/api-keys). The `API_KEY` value should be the key's `SID`.
+| Config Value                                   | Description                                                                                                                                                                                                                                 |
+| :--------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `TWILIO_ACCOUNT_SID`                           | Your primary Twilio account identifier - find this [in the console here](https://www.twilio.com/console).                                                                                                                                   |
+| `TWILIO_API_KEY_SID` / `TWILIO_API_KEY_SECRET` | Your REST API Key information needed to create an [Access Token](https://www.twilio.com/docs/iam/access-tokens) - create [an API key here](https://www.twilio.com/console/project/api-keys). The `API_KEY` value should be the key's `SID`. |
 
 ### Local development
 
