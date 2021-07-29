@@ -19,13 +19,15 @@ twilio_client = twilio.rest.Client(api_key, api_secret, account_sid)
 # Create a Flask app
 app = Flask(__name__)
 
+
 def find_or_create_room(room_name):
     try:
-        room = twilio_client.video.rooms(room_name).fetch()
+        # try to fetch an in-progress room with this name
+        twilio_client.video.rooms(room_name).fetch()
     except twilio.base.exceptions.TwilioRestException:
         # the room did not exist, so create it
-        room = twilio_client.video.rooms.create(unique_name=room_name, type="go")
-    return room
+        twilio_client.video.rooms.create(unique_name=room_name, type="go")
+
 
 def get_access_token(room_name):
     # create the access token
@@ -38,21 +40,24 @@ def get_access_token(room_name):
     access_token.add_grant(video_grant)
     return access_token
 
+
 # Create a route that returns the index.html template
 @app.route("/")
 def serve_homepage():
     return render_template("index.html")
+
 
 @app.route("/join-room", methods=["POST"])
 def join_room():
     # extract the room_name from the JSON body of the POST request
     room_name = request.json.get("room_name")
     # find an existing room with this room_name, or create one
-    room = find_or_create_room(room_name)
+    find_or_create_room(room_name)
     # retrieve an access token for this room
     access_token = get_access_token(room_name)
     # return the decoded access token in the response
     return {"token": access_token.to_jwt().decode()}
+
 
 # Start the server when this file runs
 if __name__ == "__main__":
